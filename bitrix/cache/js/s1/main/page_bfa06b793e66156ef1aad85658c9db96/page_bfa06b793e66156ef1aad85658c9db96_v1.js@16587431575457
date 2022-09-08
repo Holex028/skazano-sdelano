@@ -1,0 +1,124 @@
+
+; /* Start:"a:4:{s:4:"full";s:85:"/local/templates/main/components/bitrix/news.list/inner_calc/script.js?16577868735100";s:6:"source";s:70:"/local/templates/main/components/bitrix/news.list/inner_calc/script.js";s:3:"min";s:0:"";s:3:"map";s:0:"";}"*/
+function DOMready() {
+    var $areaCreditBox = $("[data-projects-area-slider]");
+
+    var min = $areaCreditBox.data("min");
+    var max = $areaCreditBox.data("max");
+
+    $areaCreditBox.ionRangeSlider({
+        type: "single",
+        min: min,
+        max: max,
+        from: 10,
+        hide_min_max: true,
+        onFinish: function (data) {
+            document.querySelector('.inner-calc__line input[name="area"]').value = data.from
+            calculate_prices()
+        },
+        postfix: " м²"
+    });
+    document.querySelectorAll('.inner-calc__line select').forEach(select => {
+        select.onchange = calculate_prices
+    })
+    document.querySelectorAll('.inner-calc__line input').forEach(input => {
+        input.onchange = calculate_prices
+    })
+    calculate_prices()
+
+    document.addEventListener('submit', function (event) {
+        if (event.target.classList.contains('inner-calc__calc')) {
+            event.preventDefault();
+            let url = '/ajax/sendcalcform.php';
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(Object.fromEntries(new FormData(event.target))),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                }
+            }).then(function (response) {
+                if (response.ok) {
+                    return response.text();
+                }
+                return Promise.reject(response);
+            }).then(function (data) {
+                if (data == '-2')
+                    alert('Необходимо дать согласие на обработку персональных данных!');
+                else if (data == '-1')
+                    alert('Укажите, пожалуйста, телефон');
+                else if (data == '-3') {
+                    alert('Сработала антиспам защита. Введите проверочный код и отправьте форму еще раз.');
+                    reload();
+                } else if (data == '0')
+                    alert('При отправке сообщения произошла ошибка. Пожалуйста, обновите страницу и попробуйте еще раз.');
+                else
+                    alert('Спасибо! Наши менеджеры свяжутся с вами в ближайшее время.');
+            }).catch(function (error) {
+                console.warn(error);
+            });
+        }
+    });
+
+}
+
+function calculate_prices() {
+    let sum = document.querySelector('.inner-calc input[name="area"]').value
+    let days = document.querySelector('.inner-calc input[name="area"]').value
+    document.querySelectorAll('.inner-calc__line select').forEach(select => {
+        sum *= select.options[select.selectedIndex].dataset.price
+        days *= select.options[select.selectedIndex].dataset.days
+    })
+    document.querySelectorAll('.inner-calc__line input:checked').forEach(input => {
+        sum *= input.dataset.price
+        days *= input.dataset.days
+    })
+    let design_sum
+    if (design_sum = document.querySelector('[name="add_design"]:checked'))
+        design_sum = design_sum.dataset.design * document.querySelector('.inner-calc input[name="area"]').value
+    else
+        design_sum = 0
+
+    days = Math.ceil(days)
+    sum = Math.round(sum + design_sum)
+    let days2 = days + 9
+    document.querySelector('.inner-calc__result').innerHTML = `от ${days} до ${days2} ` + getWordForms(days2, 'дня', 'дней', 'дней')
+    document.querySelector('.inner-calc__result_large').innerHTML = number_format(sum, 0, '', ' ') + ' ₽'
+}
+
+function getWordForms(number,form1,form2,form3)
+{
+    if (number<0) number = -number;
+    if (number%10==1&&number%100!=11) number = form1;
+    else if (number%10>=2&&number%10<=4&&(number%100<=4||number%100>=20)) number = form2;
+    else number = form3;
+    return number;
+}
+
+function number_format(number, decimals, dec_point, thousands_sep) {
+    // Strip all characters but numerical ones.
+    number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
+    var n = !isFinite(+number) ? 0 : +number,
+        prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+        sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+        dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+        s = '',
+        toFixedFix = function (n, prec) {
+            var k = Math.pow(10, prec);
+            return '' + Math.round(n * k) / k;
+        };
+    // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+    s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
+    if (s[0].length > 3) {
+        s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+    }
+    if ((s[1] || '').length < prec) {
+        s[1] = s[1] || '';
+        s[1] += new Array(prec - s[1].length + 1).join('0');
+    }
+    return s.join(dec);
+}
+
+
+document.addEventListener("DOMContentLoaded", DOMready);
+/* End */
+;; /* /local/templates/main/components/bitrix/news.list/inner_calc/script.js?16577868735100*/

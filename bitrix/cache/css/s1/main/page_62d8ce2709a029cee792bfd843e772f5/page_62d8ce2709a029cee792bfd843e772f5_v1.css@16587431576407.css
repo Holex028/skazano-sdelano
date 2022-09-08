@@ -1,0 +1,332 @@
+
+
+/* Start:/local/templates/main/components/bitrix/news.list/inner_calc/style.css?16572836226205*/
+.breadcrumbs, .header__btn-wrap, .h-contacts, .header__btn-icon-wrap {
+    position: relative;
+    z-index: 2;
+}
+
+.inner-calc {
+    position: relative;
+    padding: 207px 0 40px;
+    margin-top: -167px;
+    background: no-repeat center / cover;
+}
+
+.inner-calc::before {
+    content:  '';
+    position: absolute;
+    left:  0;
+    top:  0;
+    width:  100%;
+    height:  100%;
+    background:  rgba(0,0,0,0.3);
+    filter:  blur(50px);
+    pointer-events: none;
+}
+
+.inner-calc, .inner-calc *, .inner-calc *::before, .inner-calc *::after {
+    font-family: 'HelveticaRegular','Arial', sans-serif;
+    box-sizing: border-box;
+}
+
+.inner-calc__container {
+
+}
+
+.inner-calc__wrap {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.inner-calc__main {
+    flex: 0 0 47.5%;
+    position: relative;
+}
+
+.inner-calc__main>* {
+    position: relative;
+}
+
+.inner-calc__main::before {
+    content:  '';
+    position: absolute;
+    left:  0;
+    top:  0;
+    width:  100%;
+    height:  100%;
+    background:  rgba(0,0,0,0.3);
+    filter:  blur(50px);
+}
+
+.inner-calc__title {
+    color: #fff;
+    font-family: 'Intro-Black',  sans-serif;
+    /*text-transform: uppercase;*/
+    font-size: 2em;
+    margin: 0 0 0.67em;
+    font-size: 31px;
+    font-size: 37px;
+}
+
+.inner-calc__subtitle {
+    color: #fff;
+    font-family: 'Intro-Bold',  sans-serif;
+    /*text-transform: uppercase;*/
+    font-size: 1.8em;
+    margin: -0.67em 0 0.67em;
+    font-size: 26px;
+    margin-bottom: 1em;
+    color:  #fbc135;
+}
+
+.inner-calc__items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.inner-calc__item {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+
+.inner-calc__item img {
+    flex: 0 0 35px;
+    max-width: 35px;
+    height: 35px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.inner-calc__item-content {
+    flex: 0 0 calc(100% - 45px);
+}
+
+.inner-calc__item-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: 'Intro-Black',  sans-serif;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.inner-calc__item-text {
+    font-size: 14px;
+    line-height: 1;
+}
+
+.inner-calc__text {
+    margin-top: 50px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    text-align: left;
+}
+
+.inner-calc__calc {
+    background: #435366;
+    padding: 25px 20px 30px;
+    color: #fff;
+    flex: 0 0 47.5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    position: relative;
+}
+
+.inner-calc__calc::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: -7px;
+    height: 7px;
+    background: rgba(67, 83, 102,0.5);
+}
+
+.inner-calc__col {
+    flex: 0 0 47.5%;
+}
+
+.inner-calc__line {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.inner-calc__label {
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.inner-calc__line select {
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    padding: 13px 15px;
+    border-radius: 4px;
+    border: 2px solid rgba(255,255,255,0.5);
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 20px;
+    color: #ffffff;
+}
+
+.inner-calc__line select option {
+    color: black;
+}
+
+.inner-calc__line .slider {
+
+}
+
+.inner-calc__result {
+    font-size: 20px;
+    min-height: 45px;
+}
+
+.inner-calc__result_large {
+    font-size: 26px;
+    color: #fbc135;
+    font-family: 'Intro-Black',  sans-serif;
+}
+
+.inner-calc__col2 {
+    flex: 0 0 100%;
+}
+
+.inner-calc__inputs {
+
+}
+
+.inner-calc__inputs input {
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    padding: 13px 15px;
+    border-radius: 4px;
+    border: 2px solid rgba(255,255,255,0.5);
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 20px;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.inner-calc__button {
+    margin-bottom: 10px;
+}
+
+.inner-calc__line .range-slider-box .irs-single {
+    top: auto;
+    bottom: calc(100% + 10px);
+    text-transform: none;
+}
+
+.inner-calc__line .projects__range-slider {
+    margin-top: 35px;
+}
+
+.inner-calc__line .range-slider-box .irs-line, .inner-calc__line .range-slider-box .irs-slider {
+    background: #262f39;
+}
+
+.inner-calc__wa {
+    max-width: 120px;
+    display:  block;
+}
+
+.inner-calc__wa img {
+    max-width: 100%;
+}
+
+@media (max-width:  1280px) {
+    .inner-calc {
+        margin-top: -188px;
+        padding-top: 188px;
+    }
+    .header__bottom_show_laptop {
+        position: relative;
+        z-index:  2;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .inner-calc__title {
+        font-size: 1.7em;
+        margin: 1em 0;
+    }
+    .inner-calc__item {
+        flex: 0 0 100%;
+    }
+    .inner-calc__item img {
+        width: 35px;
+    }
+    .inner-calc__item-text br {
+        display: none;
+    }
+    .inner-calc__item-title {
+        font-size: 14px;
+    }
+    .inner-calc__item-text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .inner-calc {
+        background-position: top center;
+        background-size: auto 660px;
+    }
+    .inner-calc__title {
+        margin-top:  0;
+    }
+    .inner-calc__wrap {
+        display: block;
+    }
+    .inner-calc__main {
+        margin-bottom: 30px;
+    }
+    .inner-calc__item {
+        flex: 0 0 47.5%;
+    }
+    .inner-calc__text {
+        margin-top: 0;
+    }
+    .inner-calc__calc {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
+@media (max-width: 575px) {
+    .inner-calc__item {
+        flex: 0 0 100%;
+    }
+    .inner-calc__col {
+        flex: 0 0 100%;
+    }
+    .breadcrumbs {
+        height:  62px;
+    }
+    .inner-calc {
+        background-position: top center;
+        background-size: auto 750px;
+    }
+}
+
+/* End */
+/* /local/templates/main/components/bitrix/news.list/inner_calc/style.css?16572836226205 */

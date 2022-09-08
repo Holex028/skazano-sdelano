@@ -1,0 +1,306 @@
+
+
+/* Start:/local/templates/main/components/bitrix/news.list/main_calc/style.css?16571163785623*/
+.main-calc {
+    padding: 145px 0 40px;
+    min-height: 100vh;
+    margin-top: -105px;
+    background: no-repeat center / cover;
+}
+
+.main-calc, .main-calc *, .main-calc *::before, .main-calc *::after {
+    font-family: 'HelveticaRegular','Arial', sans-serif;
+    box-sizing: border-box;
+}
+
+.main-calc__container {
+
+}
+
+.main-calc__wrap {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.main-calc__main {
+    flex: 0 0 47.5%;
+    position: relative;
+}
+
+.main-calc__main>* {
+    position: relative;
+}
+
+.main-calc__main::before {
+    content:  '';
+    position: absolute;
+    left:  0;
+    top:  0;
+    width:  100%;
+    height:  100%;
+    background:  rgba(0,0,0,0.3);
+    filter:  blur(50px);
+}
+
+.main-calc__title {
+    color: #fff;
+    font-family: 'Intro-Black',  sans-serif;
+    /*text-transform: uppercase;*/
+    font-size: 2em;
+    margin: 0.67em 0;
+    font-size: 31px;
+    font-size: 37px;
+}
+
+.main-calc__title span {
+    font-family: 'Intro-Light', sans-serif;
+    font-weight: 300;
+}
+
+.main-calc__subtitle {
+    color: #fff;
+    font-family: 'Intro-Bold',  sans-serif;
+    /*text-transform: uppercase;*/
+    font-size: 1.8em;
+    margin: -0.67em 0 0.67em;
+    font-size: 26px;
+    margin-bottom: 2em;
+    color:  #fbc135;
+}
+
+.main-calc__items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.main-calc__item {
+    flex: 0 0 47.5%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 35px;
+}
+
+.main-calc__item img {
+    flex: 0 0 35px;
+    user-select: none;
+    max-width: 40px;
+    margin-right: 10px;
+}
+
+.main-calc__item-content {
+    flex: 0 0 calc(100% - 45px);
+}
+
+.main-calc__item-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: 'Intro-Black',  sans-serif;
+    line-height: 1;
+    text-transform: uppercase;
+    max-width: 150px;
+}
+
+.main-calc__item-text {
+    font-size: 14px;
+    line-height: 1;
+}
+
+.main-calc__text {
+    margin-top: 50px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 1.1;
+    text-align: left;
+}
+
+.main-calc__wa {
+    max-width: 120px;
+    display:  block;
+}
+
+.main-calc__wa img {
+    max-width: 100%;
+}
+
+.main-calc__calc {
+    background: #435366;
+    padding: 25px 20px 30px;
+    color: #fff;
+    flex: 0 0 47.5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0px 25px 40px rgba(0,0,0,0.3);
+}
+
+.main-calc__calc::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 14px;
+    right: 14px;
+    bottom: -7px;
+    height: 7px;
+    background: rgba(67, 83, 102,0.5);
+}
+
+.main-calc__col {
+    flex: 0 0 47.5%;
+}
+
+.main-calc__line {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.main-calc__line_checks {
+    min-height: 156px;
+}
+
+.main-calc__label {
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.main-calc__line select {
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    padding: 13px 15px;
+    border-radius: 4px;
+    border: 2px solid rgba(255,255,255,0.5);
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 20px;
+    color: #ffffff;
+}
+
+.main-calc__line select option {
+    color: black;
+}
+
+.main-calc__line .slider {
+
+}
+
+.main-calc__result {
+    font-size: 20px;
+    min-height: 45px;
+}
+
+.main-calc__result_large {
+    font-size: 26px;
+    color: #fbc135;
+    font-family: 'Intro-Black',  sans-serif;
+}
+
+.main-calc__col2 {
+    flex: 0 0 100%;
+}
+
+.main-calc__inputs {
+
+}
+
+.main-calc__inputs input {
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    padding: 13px 15px;
+    border-radius: 4px;
+    border: 2px solid rgba(255,255,255,0.5);
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 20px;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.main-calc__button {
+    margin-bottom: 10px;
+}
+
+.main-calc__line .range-slider-box .irs-single {
+    top: auto;
+    bottom: calc(100% + 10px);
+    text-transform: none;
+}
+
+.main-calc__line .projects__range-slider {
+    margin-top: 35px;
+}
+
+.main-calc__line .range-slider-box .irs-line, .main-calc__line .range-slider-box .irs-slider {
+    background: #262f39;
+}
+
+@media (max-width: 992px) {
+    .main-calc {
+        padding-bottom: 40px;
+    }
+    .main-calc__title {
+        font-size: 1.7em;
+        margin: 1em 0;
+    }
+    .main-calc__subtitle {
+        font-size: 1.6em;
+        margin: -1em 0 1em;
+    }
+    .main-calc__item {
+        flex: 0 0 100%;
+        margin-bottom: 25px;
+    }
+    .main-calc__item img {
+        width: 35px;
+    }
+    .main-calc__item-text br {
+        display: none;
+    }
+    .main-calc__item-title {
+        font-size: 14px;
+    }
+    .main-calc__item-text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-calc__title {
+        margin-top:  0;
+    }
+    .main-calc__wrap {
+        display: block;
+    }
+    .main-calc__main {
+        margin-bottom: 30px;
+    }
+    .main-calc__item {
+        flex: 0 0 47.5%;
+    }
+    .main-calc__text {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .main-calc__item {
+        flex: 0 0 100%;
+    }
+    .main-calc__col {
+        flex: 0 0 100%;
+    }
+}
+
+/* End */
+/* /local/templates/main/components/bitrix/news.list/main_calc/style.css?16571163785623 */
